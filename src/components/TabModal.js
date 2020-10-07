@@ -11,8 +11,6 @@ import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import TabContent from "./TabContent";
 import { Provider } from "react-redux";
-import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
-import AssessmentIcon from "@material-ui/icons/Assessment";
 import store from "../store";
 
 function TabPanel(props) {
