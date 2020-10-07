@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import Dialog from "material-ui/Dialog";
-import FlatButton from "material-ui/FlatButton";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
 import TabModal from "./TabModal";
 import Button from "@material-ui/core/Button";
+import DialogTitle from "@material-ui/core/DialogTitle";
 
 function SanKeyOperations() {
   const [Modal, setModal] = useState(false);
@@ -14,9 +15,6 @@ function SanKeyOperations() {
     setModal(false);
   };
 
-  const actions = [
-    <FlatButton label="close" primary={true} onClick={handleClose} />,
-  ];
   return (
     <>
       <div style={{ textAlign: "center" }}>
@@ -25,12 +23,17 @@ function SanKeyOperations() {
         </Button>
       </div>
       <Dialog
-        actions={actions}
-        modal={false}
+        onClose={handleClose}
+        aria-labelledby="simple-dialog-title"
         open={Modal}
-        onRequestClose={handleClose}
       >
+        <DialogTitle id="simple-dialog-title">Edit Sankey</DialogTitle>
         <TabModal />
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Close
+          </Button>
+        </DialogActions>
       </Dialog>
     </>
   );

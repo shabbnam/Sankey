@@ -5,7 +5,7 @@ import {
   FETCH_ITEMS,
 } from "../constants/ChartConstants";
 
-export const ChartReducer = (state = { data: {} }, action) => {
+export const ChartReducer = (state = { data: [] }, action) => {
   switch (action.type) {
     case ADD_ITEM:
       return {
