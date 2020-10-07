@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 import { AddItem } from "../../actions/ChartActions";
 
 const AddActionComponent = (props) => {
@@ -11,31 +13,45 @@ const AddActionComponent = (props) => {
     console.log(e.target.value);
     setNode({ ...Node, [e.target.name]: e.target.value });
   };
+
   return (
     <>
-      <input
+      <TextField
         type="text"
-        value={Node.source}
+        label="Enter Source"
         placeholder="enter source"
+        onChange={HandleChange}
         name="source"
-        onChange={HandleChange}
-      ></input>
-      <input
+        value={Node.source}
+        fullWidth={true}
+      />
+      <TextField
         type="text"
-        value={Node.target}
-        placeholder="enter source"
+        label="Enter Target"
+        placeholder="enter target"
+        onChange={HandleChange}
         name="target"
-        onChange={HandleChange}
-      ></input>
-      <input
+        value={Node.target}
+        fullWidth={true}
+      />
+      <TextField
         type="number"
-        value={Node.amount}
+        label="Enter Amount"
         placeholder="enter amount"
-        name="amount"
         onChange={HandleChange}
-      ></input>
-
-      <button onClick={() => dispatch(AddItem(Node))}>Add</button>
+        name="amount"
+        value={Node.amount}
+        fullWidth={true}
+      />
+      <div style={{ textAlign: "center", marginTop: "10px" }}>
+        <Button
+          onClick={() => dispatch(AddItem(Node))}
+          color="primary"
+          variant="contained"
+        >
+          Add
+        </Button>
+      </div>
     </>
   );
 };

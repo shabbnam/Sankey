@@ -1,29 +1,91 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import Select from "@material-ui/core/Select";
-import Button from "@material-ui/core/Button";
-import { EditItem, AddItem, DeleteItem } from "../actions/ChartActions";
-import TextField from "@material-ui/core/TextField";
-import AddComponent from "./ActionComponents/AddComponent";
-import EditComponent from "./ActionComponents/EditComponent";
-import DeleteComponent from "./ActionComponents/DeleteComponent";
+import Tabs from "@material-ui/core/Tabs";
+import { makeStyles } from "@material-ui/core/styles";
+import Tab from "@material-ui/core/Tab";
+import PropTypes from "prop-types";
 
-function TabContent({ action }) {
-  var ChartData = useSelector((state) => state.ChartData.data);
+import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
 
-  console.log(ChartData);
-  var sources = [...new Set(ChartData.map((item) => item.source))];
-  var targets = [...new Set(ChartData.map((item) => item.target))];
-  var [Node, setNode] = useState({ source: "", target: "", amount: "" });
+export function TabPanel(props) {
+  const { children, value, index, ...other } = props;
 
-  var dispatch = useDispatch();
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`vertical-tabpanel-${index}`}
+      aria-labelledby={`vertical-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box p={3}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
+  );
+}
 
-  return action === "Add" ? (
-    <AddComponent />
-  ) : action === "Edit" ? (
-    <EditComponent />
-  ) : (
-    <DeleteComponent />
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.any.isRequired,
+  value: PropTypes.any.isRequired,
+};
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.paper,
+    display: "flex",
+    height: 224,
+  },
+  tabs: {
+    borderRight: `1px solid ${theme.palette.divider}`,
+  },
+}));
+
+function TabContent(props) {
+  //console.log(props);
+  const [value, setValue] = React.useState(0);
+  const handleChange = (event, newValue) => {
+    console.log(newValue);
+    setValue(newValue);
+  };
+
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      flexGrow: 1,
+      backgroundColor: theme.palette.background.paper,
+      display: "flex",
+      height: 224,
+    },
+    tabs: {
+      borderRight: `1px solid ${theme.palette.divider}`,
+    },
+  }));
+  const classes = useStyles();
+
+  return (
+    <div className={classes.root}>
+      <Tabs
+        orientation="vertical"
+        value={value}
+        onChange={handleChange}
+        aria-label="Vertical tabs example"
+        className={classes.tabs}
+      >
+        {Object.entries(props).map((item) => (
+          <Tab icon={item[1].icon} label={item[1].label} />
+        ))}
+      </Tabs>
+
+      {Object.entries(props).map((item, index) => (
+        <TabPanel value={value} index={index}>
+          {item[1].component}
+        </TabPanel>
+      ))}
+    </div>
   );
 }
 

@@ -14,13 +14,13 @@ export const ChartReducer = (state = { data: [] }, action) => {
       };
 
     case DELETE_ITEM:
-      const newState = state.filter(({ source, target }) => {
+      const newState = state.data.filter(({ source, target }) => {
         return !(
           source === action.payload.source && target === action.payload.target
         );
       });
 
-      return [...newState];
+      return { ...state.data, data: newState };
 
     case EDIT_ITEM:
       console.log(action.payload);
