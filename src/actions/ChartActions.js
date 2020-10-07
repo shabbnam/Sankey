@@ -8,9 +8,10 @@ import {
 import { data } from "../Api/data";
 
 const AddItem = (item) => {
+  const newitem = { ...item, amount: parseInt(item.amount) };
   return {
     type: ADD_ITEM,
-    payload: item,
+    payload: newitem,
   };
 };
 

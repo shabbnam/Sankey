@@ -10,7 +10,7 @@ export const ChartReducer = (state = { data: {} }, action) => {
     case ADD_ITEM:
       return {
         ...state,
-        ChartData: [...state.ChartData, action.payload],
+        data: [...state.data, action.payload],
       };
 
     case DELETE_ITEM:
@@ -26,7 +26,7 @@ export const ChartReducer = (state = { data: {} }, action) => {
       console.log(action.payload);
       return {
         ...state,
-        ChartData: state.ChartData.filter((item) => item !== action.payload),
+        data: state.data.filter((item) => item !== action.payload),
       };
 
     case "UPDATE_ITEMS":
