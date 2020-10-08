@@ -1,10 +1,11 @@
 import React from "react";
+import { FormattedMessage } from "react-intl";
 
 function NavBar() {
   return (
     <header>
       <img src="/images/centime.png" alt="centime logo" />
-      Centime
+      <FormattedMessage id="NavBar.header" defaultMessage="Centime" />
     </header>
   );
 }

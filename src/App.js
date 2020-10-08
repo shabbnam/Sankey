@@ -6,9 +6,18 @@ import SankeyOperations from "./components/SanKeyOperations";
 import Footer from "./components/Footer";
 import { FetchItems } from "./actions/ChartActions";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import Language from "./components/Language";
+import { FormattedMessage } from "react-intl";
+import Spanish from "./languages/es-MX.json";
+import English from "./languages/en-US.json";
+import { IntlProvider } from "react-intl";
 
 function App() {
   const ChartData = useSelector((state) => state.ChartData.data);
+  const local = useSelector((state) => state.lang.lang);
+  console.log(local);
+  let lang;
+  local === "English" ? (lang = English) : (lang = Spanish);
 
   const dispatch = useDispatch();
 
@@ -28,12 +37,20 @@ function App() {
 
   return (
     <React.Fragment>
-      <NavBar></NavBar>
-      <SankeyDiagram {...SankeyProps}></SankeyDiagram>
-      <MuiThemeProvider>
-        <SankeyOperations />
-      </MuiThemeProvider>
-      <Footer>Centime Pvt Ltd</Footer>
+      <IntlProvider locale={local} messages={lang}>
+        <NavBar></NavBar>
+        <Language />
+        <SankeyDiagram {...SankeyProps}></SankeyDiagram>
+        <MuiThemeProvider>
+          <SankeyOperations />
+        </MuiThemeProvider>
+        <Footer>
+          <FormattedMessage
+            id="Footer.footer"
+            defaultMessage="Centime Pvt Ltd"
+          />
+        </Footer>
+      </IntlProvider>
     </React.Fragment>
   );
 }

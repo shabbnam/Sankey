@@ -2,7 +2,7 @@ import {
   ADD_ITEM,
   EDIT_ITEM,
   DELETE_ITEM,
-  FETCH_ITEMS,
+  UPDATE_ITEMS,
 } from "../constants/ChartConstants";
 
 export const ChartReducer = (state = { data: [] }, action) => {
@@ -34,7 +34,7 @@ export const ChartReducer = (state = { data: [] }, action) => {
 
       return { ...state, data: EditedState };
 
-    case "UPDATE_ITEMS":
+    case UPDATE_ITEMS:
       return { ...state, data: action.payload };
 
     default:

@@ -5,4 +5,4 @@ function Footer(props) {
   return <footer>{props.children}</footer>;
 }
 
-export default Footer;
+export default React.memo(Footer);

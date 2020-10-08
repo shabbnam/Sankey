@@ -2,7 +2,7 @@ import {
   ADD_ITEM,
   EDIT_ITEM,
   DELETE_ITEM,
-  FETCH_ITEMS,
+  UPDATE_ITEMS,
 } from "../constants/ChartConstants";
 
 import { data } from "../Api/data";
@@ -33,7 +33,7 @@ const FetchItems = () => {
   return (dispatch) => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        dispatch({ type: "UPDATE_ITEMS", payload: data });
+        dispatch({ type: UPDATE_ITEMS, payload: data });
         resolve();
       }, 1000);
     });
