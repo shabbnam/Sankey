@@ -21,8 +21,8 @@ function Language() {
     dispatch(Update_Language(SelectedLang));
   }, [SelectedLang]);
   return (
-    <div>
-      <InputLabel htmlFor="source">Source</InputLabel>
+    <div style={{ paddingLeft: "93%" }}>
+      <InputLabel htmlFor="source">Language</InputLabel>
       <Select
         style={{ marginBottom: "20px" }}
         native
