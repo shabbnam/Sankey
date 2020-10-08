@@ -37,13 +37,17 @@ function App() {
 
   return (
     <React.Fragment>
+      {/* internationalization plugin provider */}
       <IntlProvider locale={local} messages={lang}>
+        {/* NavBar */}
         <NavBar></NavBar>
         <Language />
-        <SankeyDiagram {...SankeyProps}></SankeyDiagram>
+        <SankeyDiagram {...SankeyProps}></SankeyDiagram> {/* Sankey diagram */}
         <MuiThemeProvider>
+          {/* crud operations  */}
           <SankeyOperations />
         </MuiThemeProvider>
+        {/*footer */}
         <Footer>
           <FormattedMessage
             id="Footer.footer"

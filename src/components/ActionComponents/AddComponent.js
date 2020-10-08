@@ -22,9 +22,7 @@ const AddActionComponent = (props) => {
         label={
           <FormattedMessage id="enter.source" defaultMessage="enter source" />
         }
-        placeholder={
-          <FormattedMessage id="enter.source" defaultMessage="enter source" />
-        }
+        placeholder="source"
         onChange={HandleChange}
         name="source"
         value={Node.source}

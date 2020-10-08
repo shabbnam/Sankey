@@ -12,5 +12,5 @@ export const data = [
   { source: CompanyName, target: "Salaries", amount: 5000000 },
   { source: CompanyName, target: "taxes", amount: 2000000 },
   { source: CompanyName, target: "Advertising", amount: 400000 },
-  { source: CompanyName, target: "Others", amount: 100000 },
+  { source: CompanyName, target: "Others", amount: 1000000 },
 ];
