@@ -9,11 +9,16 @@ function SankeyDiagram({
   weightField,
   title,
 }) {
+  const numberWithCommas = (x) => {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
   //customize the tooltip
   const customizeLinkTooltip = (info) => {
     console.log(info);
     return {
-      html: `<b>From:</b> ${info.source}<br/><b>To:</b> ${info.target}<br/><b>Amount:</b> ${info.weight}`,
+      html: `<b>From:</b> ${info.source}<br/><b>To:</b> ${
+        info.target
+      }<br/><b>Amount:</b> ${numberWithCommas(info.weight)}`,
     };
   };
   return (

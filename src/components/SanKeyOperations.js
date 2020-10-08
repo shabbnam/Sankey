@@ -22,11 +22,7 @@ function SanKeyOperations() {
           Edit Sankey
         </Button>
       </div>
-      <Dialog
-        onClose={handleClose}
-        aria-labelledby="simple-dialog-title"
-        open={Modal}
-      >
+      <Dialog onClose={handleClose} open={Modal}>
         <DialogTitle id="simple-dialog-title">Edit Sankey</DialogTitle>
         <TabModal />
         <DialogActions>

@@ -3,15 +3,11 @@ import AddIcon from "@material-ui/icons/Add";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import TabContent from "./TabContent";
-import { Provider } from "react-redux";
-import store from "../store";
 import AddComponent from "./ActionComponents/AddComponent";
 import DeleteComponent from "./ActionComponents/DeleteComponent";
 import EditComponent from "./ActionComponents/EditComponent";
 
 export default function VerticalTabs() {
-  //const Icons = [<AddIcon />, <EditIcon />, <DeleteIcon />];
-
   const content = {
     add: {
       icon: <AddIcon />,
