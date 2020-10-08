@@ -24,10 +24,15 @@ export const ChartReducer = (state = { data: [] }, action) => {
 
     case EDIT_ITEM:
       console.log(action.payload);
-      return {
-        ...state,
-        data: state.data.filter((item) => item !== action.payload),
-      };
+      const { source, target, amount } = action.payload;
+      const EditedState = state.data.map((item) => {
+        console.log(item);
+        return item.source === source && item.target === target
+          ? action.payload
+          : item;
+      });
+
+      return { ...state, data: EditedState };
 
     case "UPDATE_ITEMS":
       return { ...state, data: action.payload };
