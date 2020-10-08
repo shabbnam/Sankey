@@ -1,4 +1,16 @@
 {
   "NavBar.header": "céntimo",
-  "Footer.footer": "céntimo Pvt Ltd"
+  "Footer.footer": "céntimo Pvt Ltd",
+  "Edit.Sankey": "Editar Sankey",
+  "Close.Sankey": "Cerca",
+  "Dialog.Sankey": "Editar Sankey",
+  "Add": "Añadir",
+  "Edit": "Editar",
+  "Delete": "Eliminar",
+  "enter.source": "fuente de eneter",
+  "enter.target": "ingresar objetivo",
+  "enter.amount": "ingrese la cantidad",
+  "source": "fuente",
+  "target": "objetivo",
+  "amount": "cantidad"
 }

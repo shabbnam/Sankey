@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { AddItem } from "../../actions/ChartActions";
+import { FormattedMessage } from "react-intl";
 
 const AddActionComponent = (props) => {
   var [Node, setNode] = useState({ source: "", target: "", amount: "" });
@@ -18,8 +19,12 @@ const AddActionComponent = (props) => {
     <>
       <TextField
         type="text"
-        label="Enter Source"
-        placeholder="enter source"
+        label={
+          <FormattedMessage id="enter.source" defaultMessage="enter source" />
+        }
+        placeholder={
+          <FormattedMessage id="enter.source" defaultMessage="enter source" />
+        }
         onChange={HandleChange}
         name="source"
         value={Node.source}
@@ -27,8 +32,12 @@ const AddActionComponent = (props) => {
       />
       <TextField
         type="text"
-        label="Enter Target"
-        placeholder="enter target"
+        label={
+          <FormattedMessage id="enter.source" defaultMessage="enter source" />
+        }
+        placeholder={
+          <FormattedMessage id="enter.source" defaultMessage="enter source" />
+        }
         onChange={HandleChange}
         name="target"
         value={Node.target}
@@ -36,8 +45,12 @@ const AddActionComponent = (props) => {
       />
       <TextField
         type="number"
-        label="Enter Amount"
-        placeholder="enter amount"
+        label={
+          <FormattedMessage id="enter.amount" defaultMessage="enter amount" />
+        }
+        placeholder={
+          <FormattedMessage id="enter.source" defaultMessage="enter source" />
+        }
         onChange={HandleChange}
         name="amount"
         value={Node.amount}
@@ -49,7 +62,7 @@ const AddActionComponent = (props) => {
           color="primary"
           variant="contained"
         >
-          Add
+          <FormattedMessage id="Add" defaultMessage="Add" />
         </Button>
       </div>
     </>

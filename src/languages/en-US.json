@@ -1,4 +1,16 @@
 {
   "NavBar.header": "centime",
-  "Footer.footer": "centime Pvt Ltd"
+  "Footer.footer": "centime Pvt Ltd",
+  "Edit.Sankey": "Edit Sankey",
+  "Close.Sankey": "Close",
+  "Dialog.Sankey": "Edit Sankey",
+  "Add": "Add",
+  "Edit": "Edit",
+  "Delete": "Delete",
+  "enter.source": "enter source",
+  "enter.target": "enter target",
+  "enter.amount": "enter amount",
+  "source": "source",
+  "target": "target",
+  "amount": "amount"
 }

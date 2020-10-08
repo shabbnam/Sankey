@@ -6,25 +6,26 @@ import TabContent from "./TabContent";
 import AddComponent from "./ActionComponents/AddComponent";
 import DeleteComponent from "./ActionComponents/DeleteComponent";
 import EditComponent from "./ActionComponents/EditComponent";
+import { FormattedMessage } from "react-intl";
 
 export default function VerticalTabs() {
   const content = {
     add: {
       icon: <AddIcon />,
       index: 0,
-      label: "Add",
+      label: <FormattedMessage id="Add" defaultMessage="Add" />,
       component: <AddComponent />,
     },
     edit: {
       icon: <EditIcon />,
       index: 1,
-      label: "Edit",
+      label: <FormattedMessage id="Edit" defaultMessage="Edit" />,
       component: <EditComponent />,
     },
     delete: {
       icon: <DeleteIcon />,
       index: 2,
-      label: "Delete",
+      label:  <FormattedMessage id="Delete" defaultMessage="Delete" />,
       component: <DeleteComponent />,
     },
   };

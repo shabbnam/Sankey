@@ -5,6 +5,7 @@ import Select from "@material-ui/core/Select";
 import InputLabel from "@material-ui/core/InputLabel";
 import TextField from "@material-ui/core/TextField";
 import { EditItem } from "../../actions/ChartActions";
+import { FormattedMessage } from "react-intl";
 
 function EditComponent() {
   var ChartData = useSelector((state) => state.ChartData.data);
@@ -64,7 +65,9 @@ function EditComponent() {
 
   return (
     <>
-      <InputLabel htmlFor="source">Source</InputLabel>
+      <InputLabel htmlFor="source">
+        <FormattedMessage id="source" defaultMessage="source" />
+      </InputLabel>
       <Select
         style={{ marginBottom: "20px" }}
         fullWidth={true}
@@ -77,7 +80,9 @@ function EditComponent() {
           <option value={source}>{source}</option>
         ))}
       </Select>
-      <InputLabel htmlFor="target">Target</InputLabel>
+      <InputLabel htmlFor="target">
+        <FormattedMessage id="target" defaultMessage="Target" />
+      </InputLabel>
       <Select
         fullWidth={true}
         native
@@ -90,26 +95,24 @@ function EditComponent() {
           <option value={target}>{target}</option>
         ))}
       </Select>
-      {Node.amount > 0 ? (
-        <TextField
-          type="number"
-          label="Amount"
-          placeholder="Amount"
-          onChange={handleChange}
-          name="amount"
-          value={Node.amount}
-          fullWidth={true}
-        />
-      ) : (
-        <h4>This Item doesn't exist</h4>
-      )}
+
+      <TextField
+        type="number"
+        label={<FormattedMessage id="amount" defaultMessage="amount" />}
+        placeholder={<FormattedMessage id="amount" defaultMessage="amount" />}
+        onChange={handleChange}
+        name="amount"
+        value={Node.amount}
+        fullWidth={true}
+      />
+
       <div style={{ textAlign: "center", marginTop: "10px" }}>
         <Button
           onClick={() => dispatch(EditItem(Node))}
           color="primary"
           variant="contained"
         >
-          Edit
+          <FormattedMessage id="Edit" defaultMessage="EDIT" />
         </Button>
       </div>
     </>

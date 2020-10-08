@@ -4,6 +4,7 @@ import { DeleteItem } from "../../actions/ChartActions";
 import Button from "@material-ui/core/Button";
 import Select from "@material-ui/core/Select";
 import InputLabel from "@material-ui/core/InputLabel";
+import { FormattedMessage } from "react-intl";
 
 function DeleteComponent() {
   var ChartData = useSelector((state) => state.ChartData.data);
@@ -27,7 +28,9 @@ function DeleteComponent() {
 
   return (
     <>
-      <InputLabel htmlFor="source">Source</InputLabel>
+      <InputLabel htmlFor="source">
+        <FormattedMessage id="source" defaultMessage="source" />
+      </InputLabel>
       <Select
         style={{ marginBottom: "20px" }}
         fullWidth={true}
@@ -41,7 +44,10 @@ function DeleteComponent() {
         ))}
       </Select>
 
-      <InputLabel htmlFor="target">Target</InputLabel>
+      <InputLabel htmlFor="target">
+        {" "}
+        <FormattedMessage id="target" defaultMessage="target" />
+      </InputLabel>
       <Select
         fullWidth={true}
         native
@@ -56,7 +62,7 @@ function DeleteComponent() {
       </Select>
 
       <Button color="primary" variant="contained" onClick={clickHandler}>
-        Delete
+        <FormattedMessage id="Delete" defaultMessage="DELETE" />
       </Button>
     </>
   );
