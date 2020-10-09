@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Tabs from "@material-ui/core/Tabs";
 import { makeStyles } from "@material-ui/core/styles";
 import Tab from "@material-ui/core/Tab";
@@ -46,10 +46,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function TabContent(props) {
-  //console.log(props);
+  
   const [value, setValue] = React.useState(0);
   const handleChange = (event, newValue) => {
-    console.log(newValue);
+   
     setValue(newValue);
   };
 

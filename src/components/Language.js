@@ -3,6 +3,7 @@ import Select from "@material-ui/core/Select";
 import { useDispatch, useSelector } from "react-redux";
 import { Update_Language } from "../actions/LanguageActions";
 import InputLabel from "@material-ui/core/InputLabel";
+import { FormattedMessage } from "react-intl";
 
 function Language() {
   const languagesSupported = ["English", "Spanish"];
@@ -20,9 +21,10 @@ function Language() {
   useEffect(() => {
     dispatch(Update_Language(SelectedLang));
   }, [SelectedLang]);
+
   return (
     <div style={{ paddingLeft: "93%" }}>
-      <InputLabel htmlFor="source">Language</InputLabel>
+      <InputLabel htmlFor="source"><FormattedMessage id="Language" defaultMessage="Language"/></InputLabel>
       <Select
         style={{ marginBottom: "20px" }}
         native

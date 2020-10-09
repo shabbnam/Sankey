@@ -12,5 +12,6 @@
   "enter.amount": "enter amount",
   "source": "source",
   "target": "target",
-  "amount": "amount"
+  "amount": "amount",
+  "language":"language"
 }

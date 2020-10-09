@@ -12,5 +12,6 @@
   "enter.amount": "ingrese la cantidad",
   "source": "fuente",
   "target": "objetivo",
-  "amount": "cantidad"
+  "amount": "cantidad",
+  "language":"idioma"
 }

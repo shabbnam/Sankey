@@ -15,7 +15,6 @@ import { IntlProvider } from "react-intl";
 function App() {
   const ChartData = useSelector((state) => state.ChartData.data);
   const local = useSelector((state) => state.lang.lang);
-  console.log(local);
   let lang;
   local === "English" ? (lang = English) : (lang = Spanish);
 
